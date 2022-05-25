@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "xchook",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:Kyome22/XCHook.git",
+      "state" : {
+        "revision" : "2d21f1af03725f347f09e01eae8a490fc545e13d",
+        "version" : "0.1.1"
+      }
+    }
+  ],
+  "version" : 2
+}

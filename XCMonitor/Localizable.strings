@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  XCMonitor
+
+  Created by Takuto Nakamura on 2022/05/01.
+  
+*/
+
+"noProject" = "No Project";
+"preferences" = "Preferences";
+"aboutApp" = "About XCMonitor";
+"terminateApp" = "Quit XCMonitor";
