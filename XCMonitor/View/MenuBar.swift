@@ -64,7 +64,7 @@ final class MenuBar {
     }
 
     func updateStatus(event: XCHookEvent, isDark: Bool) {
-        projectItem.title = event.project
+        projectItem.title = "Show \(event.project) Project on Xcode"
 
         var imageName: String = ""
         switch event.status {
