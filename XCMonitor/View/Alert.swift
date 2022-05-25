@@ -19,18 +19,18 @@ final class Alert {
         switch alertType {
         case .xcodePlistNotFound:
             alert.alertStyle = .critical
-            alert.messageText = "Xcode.plist Not Found"
-            alert.informativeText = "XCMonitor cannot be used unless Xcode.app is installed and accessible."
+            alert.messageText = "plistNotFoundMessage".localized
+            alert.informativeText = "plistNotFoundInformative".localized
         case .xcodeIsRunning:
             alert.alertStyle = .critical
-            alert.messageText = "Xcode.app Is Running"
-            alert.informativeText = "This operation cannot be performed while Xcode.app is running. Please quit Xcode.app."
+            alert.messageText = "xcodeIsRunningMessage".localized
+            alert.informativeText = "xcodeIsRunningInformative".localized
         case .xchookWarning:
             alert.alertStyle = .warning
-            alert.messageText = "Confirmation"
-            alert.informativeText = "Enabling XCHook will overwrite scripts already set in Xcode Behaviors."
-            alert.addButton(withTitle: "Enable")
-            alert.addButton(withTitle: "Cancel")
+            alert.messageText = "xchookConfirmMessage".localized
+            alert.informativeText = "xchookConfirmInformative".localized
+            alert.addButton(withTitle: "xchookConfirmEnable".localized)
+            alert.addButton(withTitle: "xchookConfirmCancel".localized)
         }
         if let window = window {
             alert.beginSheetModal(for: window) { response in

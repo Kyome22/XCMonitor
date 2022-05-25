@@ -17,7 +17,7 @@ final class MenuBarModel: NSObject {
     private var cancellables = Set<AnyCancellable>()
 
     override init() {
-        event = XCHookEvent(project: "noProject".localized,
+        event = XCHookEvent(project: "",
                             path: "",
                             status: .standby,
                             timestamp: "0.0")

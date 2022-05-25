@@ -64,7 +64,9 @@ final class MenuBar {
     }
 
     func updateStatus(event: XCHookEvent, isDark: Bool) {
-        projectItem.title = "Show \(event.project) Project on Xcode"
+        if !event.project.isEmpty {
+            projectItem.title = "Show \(event.project) Project on Xcode"
+        }
 
         var imageName: String = ""
         switch event.status {

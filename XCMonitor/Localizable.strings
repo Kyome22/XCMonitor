@@ -6,7 +6,20 @@
   
 */
 
+// MenuBar
 "noProject" = "No Project";
 "preferences" = "Preferences";
 "aboutApp" = "About XCMonitor";
 "terminateApp" = "Quit XCMonitor";
+
+// Alert
+"plistNotFoundMessage" = "Xcode.plist Not Found";
+"plistNotFoundInformative" = "XCMonitor cannot be used unless Xcode.app is installed and accessible.";
+
+"xcodeIsRunningMessage" = "Xcode.app Is Running";
+"xcodeIsRunningInformative" = "This operation cannot be performed while Xcode.app is running. Please quit Xcode.app.";
+
+"xchookConfirmMessage" = "Confirmation";
+"xchookConfirmInformative" = "Enabling XCHook will overwrite scripts already set in Xcode Behaviors.";
+"xchookConfirmEnable" = "Enable";
+"xchookConfirmCancel" = "Cancel";
