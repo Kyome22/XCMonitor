@@ -94,7 +94,7 @@ final class MenuBarModel: NSObject {
                                                elapsedTime: elapsedTime))
             i += 2
         }
-        menuBar.updateEventHistories(eventHistories.reversed())
+        menuBar.updateEventHistories(eventHistories.reversed(), self)
     }
 }
 

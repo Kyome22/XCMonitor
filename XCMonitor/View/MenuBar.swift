@@ -96,7 +96,7 @@ final class MenuBar {
         button.image = NSImage(named: imageName)
     }
 
-    func updateEventHistories(_ eventHistories: [EventHistory]) {
+    func updateEventHistories(_ eventHistories: [EventHistory], _ target: MenuBarModel) {
         historiesMenu.removeAllItems()
         eventHistories.forEach { eventHistory in
             let title = String(format: "%@: %@ (%.3f sec)",
@@ -105,6 +105,7 @@ final class MenuBar {
                                eventHistory.elapsedTime)
             let item = NSMenuItem(title: title,
                                   action: #selector(MenuBarModel.dummyAction(_:)))
+            item.target = target
             item.image = NSImage(named: eventHistory.eventType.imageName)
             historiesMenu.addItem(item)
         }
