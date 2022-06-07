@@ -8,6 +8,9 @@
 
 // MenuBar
 "noProject" = "No Project";
+"showProject" = "Show “NAME” Project on Xcode";
+"empty" = "Empty";
+"eventHistory" = "Event History";
 "preferences" = "Preferences";
 "aboutApp" = "About XCMonitor";
 "terminateApp" = "Quit XCMonitor";

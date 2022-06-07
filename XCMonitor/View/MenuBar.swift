@@ -14,6 +14,7 @@ final class MenuBar {
     private let button: NSStatusBarButton
     private let menu = NSMenu()
     private let projectItem: NSMenuItem
+    private let historiesMenu = NSMenu()
 
     var isDark: Bool {
         return button.superview!.effectiveAppearance.isDark
@@ -37,6 +38,18 @@ final class MenuBar {
             action: #selector(MenuBarModel.openProject(_:))
         )
         menu.addItem(projectItem)
+
+        let emptyItem = NSMenuItem(title: "empty".localized,
+                                   action: nil,
+                                   keyEquivalent: "")
+        emptyItem.isEnabled = false
+        historiesMenu.addItem(emptyItem)
+        let historiesItem = NSMenuItem(title: "eventHistory".localized,
+                                       action: nil,
+                                       keyEquivalent: "")
+        historiesItem.submenu = historiesMenu
+        menu.addItem(historiesItem)
+
         menu.addItem(NSMenuItem.separator())
 
         let preferencesItem = NSMenuItem(
@@ -65,7 +78,8 @@ final class MenuBar {
 
     func updateStatus(event: XCHookEvent, isDark: Bool) {
         if !event.project.isEmpty {
-            projectItem.title = "Show \(event.project) Project on Xcode"
+            projectItem.title = "showProject".localized
+                .replacingOccurrences(of: "NAME", with: event.project)
         }
 
         var imageName: String = ""
@@ -80,5 +94,19 @@ final class MenuBar {
         }
         imageName += isDark ? "-dark" : "-light"
         button.image = NSImage(named: imageName)
+    }
+
+    func updateEventHistories(_ eventHistories: [EventHistory]) {
+        historiesMenu.removeAllItems()
+        eventHistories.forEach { eventHistory in
+            let title = String(format: "%@: %@ (%.3f sec)",
+                               eventHistory.project,
+                               eventHistory.eventType.rawValue,
+                               eventHistory.elapsedTime)
+            let item = NSMenuItem(title: title,
+                                  action: #selector(MenuBarModel.dummyAction(_:)))
+            item.image = NSImage(named: eventHistory.eventType.imageName)
+            historiesMenu.addItem(item)
+        }
     }
 }
