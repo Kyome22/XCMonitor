@@ -51,13 +51,28 @@ final class MenuBarModel: NSObject {
     @IBAction func openProject(_ sender: Any?) {
         if event.path.isEmpty { return }
         let projectURL = URL(fileURLWithPath: event.path)
-        if let xcodeURL = NSWorkspace.shared.urlForApplication(withBundleIdentifier: "com.apple.dt.Xcode") {
-            let config = NSWorkspace.OpenConfiguration()
-            NSWorkspace.shared.open([projectURL], withApplicationAt: xcodeURL, configuration: config)
-        }
+        openXcodeProject(with: projectURL)
     }
 
-    @IBAction func dummyAction(_ sender: Any?) {}
+    @IBAction func openHistoricalProject(_ sender: Any?) {
+        guard let historyMenuItem = sender as? HistoryMenuItem,
+              let projectURL = historyMenuItem.projectURL
+        else { return }
+        openXcodeProject(with: projectURL)
+    }
+
+    private func openXcodeProject(with url: URL) {
+        let projectFile = url.lastPathComponent
+        guard FileManager.default.fileExists(atPath: url.path) else {
+            Alert.show(alertType: .projectCouldNotOpen(projectFile))
+            return
+        }
+        let workspace = NSWorkspace.shared
+        if let xcodeURL = workspace.urlForApplication(withBundleIdentifier: "com.apple.dt.Xcode") {
+            let config = NSWorkspace.OpenConfiguration()
+            workspace.open([url], withApplicationAt: xcodeURL, configuration: config)
+        }
+    }
 
     private func addEvent(_ event: XCHookEvent) {
         eventList.append(event)
@@ -89,9 +104,11 @@ final class MenuBarModel: NSObject {
                 continue
             }
             let elapsedTime = event1.timestamp - event0.timestamp
+            let projectURL = event0.path.isEmpty ? nil : URL(fileURLWithPath: event0.path)
             eventHistories.append(EventHistory(project: event0.project,
                                                eventType: eventType,
-                                               elapsedTime: elapsedTime))
+                                               elapsedTime: elapsedTime,
+                                               projectURL: projectURL))
             i += 2
         }
         menuBar.updateEventHistories(eventHistories.reversed(), self)

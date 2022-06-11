@@ -27,6 +27,7 @@
 		1C5BEE7B283E924500AC339D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BEE7A283E924500AC339D /* main.swift */; };
 		1C5BEE7D283E92FD00AC339D /* XCMonitorLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1C5BEE6A283E91B000AC339D /* XCMonitorLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1C5BEE7F283E940700AC339D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BEE7E283E940700AC339D /* DataManager.swift */; };
+		1CE1994328548E590040CE90 /* HistoryMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE1994228548E590040CE90 /* HistoryMenuItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +68,7 @@
 		1C5BEE79283E91F800AC339D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1C5BEE7A283E924500AC339D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		1C5BEE7E283E940700AC339D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		1CE1994228548E590040CE90 /* HistoryMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMenuItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			children = (
 				1C58B010281D8E380022595E /* Extensions.swift */,
 				1C58B00E281D8DF90022595E /* MenuBar.swift */,
+				1CE1994228548E590040CE90 /* HistoryMenuItem.swift */,
 				1C58B024281EE3D80022595E /* Alert.swift */,
 				1C58B017281ECA240022595E /* PreferencesTabVC.swift */,
 				1C58B019281ED0E80022595E /* PreferencesTab.storyboard */,
@@ -280,6 +283,7 @@
 				1C58B011281D8E380022595E /* Extensions.swift in Sources */,
 				1C58B018281ECA240022595E /* PreferencesTabVC.swift in Sources */,
 				1C58B01C281ED44B0022595E /* GeneralPaneVC.swift in Sources */,
+				1CE1994328548E590040CE90 /* HistoryMenuItem.swift in Sources */,
 				1C58B020281EDDCF0022595E /* GeneralPaneModel.swift in Sources */,
 				1C58AFF6281D8AE70022595E /* AppDelegate.swift in Sources */,
 				1C58B009281D8C710022595E /* main.swift in Sources */,

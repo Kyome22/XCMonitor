@@ -27,4 +27,5 @@ struct EventHistory {
     let project: String
     let eventType: EventType
     let elapsedTime: Double
+    let projectURL: URL?
 }

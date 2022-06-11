@@ -5,7 +5,7 @@
 //  Created by Takuto Nakamura on 2022/05/01.
 //
 
-import Cocoa
+import AppKit
 import Combine
 import XCHook
 
@@ -103,10 +103,11 @@ final class MenuBar {
                                eventHistory.project,
                                eventHistory.eventType.rawValue,
                                eventHistory.elapsedTime)
-            let item = NSMenuItem(title: title,
-                                  action: #selector(MenuBarModel.dummyAction(_:)))
-            item.target = target
-            item.image = NSImage(named: eventHistory.eventType.imageName)
+            let item = HistoryMenuItem(title: title,
+                                       projectURL: eventHistory.projectURL,
+                                       image: NSImage(named: eventHistory.eventType.imageName),
+                                       target: target,
+                                       action: #selector(MenuBarModel.openHistoricalProject(_:)))
             historiesMenu.addItem(item)
         }
     }

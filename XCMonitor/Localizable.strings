@@ -26,3 +26,6 @@
 "xchookConfirmInformative" = "Enabling XCHook will overwrite scripts already set in Xcode Behaviors.";
 "xchookConfirmEnable" = "Enable";
 "xchookConfirmCancel" = "Cancel";
+
+"projectNotOpenMessage" = "“PROJECT_FILE” Could Not Open";
+"projectNotOpenInformative" = "The file path may have changed or the project file may have been deleted.";

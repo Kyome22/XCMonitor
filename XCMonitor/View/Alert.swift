@@ -11,6 +11,7 @@ enum AlertType {
     case xcodePlistNotFound
     case xcodeIsRunning
     case xchookWarning
+    case projectCouldNotOpen(String)
 }
 
 final class Alert {
@@ -31,6 +32,11 @@ final class Alert {
             alert.informativeText = "xchookConfirmInformative".localized
             alert.addButton(withTitle: "xchookConfirmEnable".localized)
             alert.addButton(withTitle: "xchookConfirmCancel".localized)
+        case .projectCouldNotOpen(let projectFile):
+            alert.alertStyle = .warning
+            alert.messageText = "projectNotOpenMessage".localized
+                .replacingOccurrences(of: "PROJECT_FILE", with: projectFile)
+            alert.informativeText = "projectNotOpenInformative".localized
         }
         if let window = window {
             alert.beginSheetModal(for: window) { response in
