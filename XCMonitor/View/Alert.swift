@@ -7,7 +7,7 @@
 
 import Cocoa
 
-enum AlertType {
+enum AlertType: Equatable {
     case xcodePlistNotFound
     case xcodeIsRunning
     case xchookWarning

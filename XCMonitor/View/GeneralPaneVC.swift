@@ -44,7 +44,7 @@ final class GeneralPaneVC: NSViewController {
     }
 
     func showAlert(alertType: AlertType) {
-        if case .xchookWarning = alertType {
+        if alertType == .xchookWarning {
             Alert.show(alertType: alertType, window: self.view.window) { [weak self] userResponse in
                 self?.model.react(for: userResponse)
             }
