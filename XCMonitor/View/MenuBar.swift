@@ -54,14 +54,14 @@ final class MenuBar {
 
         let preferencesItem = NSMenuItem(
             title: "preferences".localized,
-            action: #selector(AppDelegate.openPreferences(_:))
+            action: #selector(AppDelegate.openPreferencesWindow)
         )
         menu.addItem(preferencesItem)
         menu.addItem(NSMenuItem.separator())
 
         let aboutItem = NSMenuItem(
             title: "aboutApp".localized,
-            action: #selector(AppDelegate.openAbout(_:))
+            action: #selector(AppDelegate.openAboutWindow)
         )
         menu.addItem(aboutItem)
 

@@ -64,7 +64,7 @@ final class MenuBarModel: NSObject {
     private func openXcodeProject(with url: URL) {
         let projectFile = url.lastPathComponent
         guard FileManager.default.fileExists(atPath: url.path) else {
-            Alert.show(alertType: .projectCouldNotOpen(projectFile))
+//            Alert.show(alertType: .projectCouldNotOpen(projectFile))
             return
         }
         let workspace = NSWorkspace.shared
