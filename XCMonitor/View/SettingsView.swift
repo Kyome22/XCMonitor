@@ -16,11 +16,10 @@ struct SettingsView: View {
         TabView {
             GeneralSettingsView()
                 .tabItem {
-                    Label("General", systemImage: "gear")
+                    Label("general", systemImage: "gear")
                 }
                 .tag(Tabs.general)
         }
-        .padding(20)
     }
 }
 

@@ -15,16 +15,16 @@ struct GeneralSettingsView: View {
             HStack {
                 Text("XCHook:")
                 Toggle(isOn: $viewModel.xchookEnabled) {
-                    Text("Enable scripts to hook Xcode events.")
+                    Text("enableScripts")
                 }
                 .onChange(of: viewModel.xchookEnabled) { newValue in
                     viewModel.toggleXCHookEnabled(newValue)
                 }
             }
             HStack {
-                Text("Startup:")
+                Text("startup:")
                 Toggle(isOn: $viewModel.launchAtLogin) {
-                    Text("Start XCMonitor automatically at login.")
+                    Text("launchAtLogin")
                 }
                 .onChange(of: viewModel.launchAtLogin) { newValue in
                     viewModel.toggleLaunchAtLogin(newValue)

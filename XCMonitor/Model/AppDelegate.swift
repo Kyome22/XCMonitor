@@ -25,6 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApp.windows.forEach { window in
             if window.canBecomeMain {
                 window.orderFrontRegardless()
+                NSApp.activate(ignoringOtherApps: true)
             }
         }
     }

@@ -79,7 +79,7 @@ final class MenuBar {
     func updateStatus(event: XCHookEvent, isDark: Bool) {
         if !event.project.isEmpty {
             projectItem.title = "showProject".localized
-                .replacingOccurrences(of: "NAME", with: event.project)
+                .replacingOccurrences(of: "PROJECT", with: event.project)
         }
 
         var imageName: String = ""

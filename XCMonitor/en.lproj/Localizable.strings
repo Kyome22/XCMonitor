@@ -8,10 +8,10 @@
 
 // MenuBar
 "noProject" = "No Project";
-"showProject" = "Show “NAME” Project on Xcode";
+"showProject" = "Show “PROJECT” Project on Xcode";
 "empty" = "Empty";
 "eventHistory" = "Event History";
-"preferences" = "Preferences";
+"preferences" = "Preferences…";
 "aboutApp" = "About XCMonitor";
 "terminateApp" = "Quit XCMonitor";
 
@@ -29,3 +29,9 @@
 
 "projectNotOpenMessage" = "“PROJECT” Could Not Open";
 "projectNotOpenInformative" = "The file path may have changed or the project file may have been deleted.";
+
+// Preferences
+"general" = "General";
+"enableScripts" = "Enable scripts to hook Xcode events.";
+"startup:" = "Startup:";
+"launchAtLogin" = "Launch XCMonitor automatically at login.";
