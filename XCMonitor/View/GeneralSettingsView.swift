@@ -13,21 +13,23 @@ struct GeneralSettingsView: View {
     var body: some View {
         Form {
             HStack {
-                Text("XCHook:")
-                Toggle(isOn: $viewModel.xchookEnabled) {
-                    Text("enableScripts")
+                VStack(alignment: .trailing, spacing: 8) {
+                    Text("XCHook:")
+                    Text("startup:")
                 }
-                .onChange(of: viewModel.xchookEnabled) { newValue in
-                    viewModel.toggleXCHookEnabled(newValue)
-                }
-            }
-            HStack {
-                Text("startup:")
-                Toggle(isOn: $viewModel.launchAtLogin) {
-                    Text("launchAtLogin")
-                }
-                .onChange(of: viewModel.launchAtLogin) { newValue in
-                    viewModel.toggleLaunchAtLogin(newValue)
+                VStack(alignment: .leading, spacing: 8) {
+                    Toggle(isOn: $viewModel.xchookEnabled) {
+                        Text("enableScripts")
+                    }
+                    .onChange(of: viewModel.xchookEnabled) { newValue in
+                        viewModel.toggleXCHookEnabled(newValue)
+                    }
+                    Toggle(isOn: $viewModel.launchAtLogin) {
+                        Text("launchAtLogin")
+                    }
+                    .onChange(of: viewModel.launchAtLogin) { newValue in
+                        viewModel.toggleLaunchAtLogin(newValue)
+                    }
                 }
             }
         }
