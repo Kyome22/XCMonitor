@@ -27,5 +27,5 @@
 "xchookConfirmEnable" = "Enable";
 "xchookConfirmCancel" = "Cancel";
 
-"projectNotOpenTitle@" = "“@” Could Not Open";
-"projectNotOpenMessage" = "The file path may have changed or the project file may have been deleted.";
+"projectNotOpenMessage" = "“PROJECT” Could Not Open";
+"projectNotOpenInformative" = "The file path may have changed or the project file may have been deleted.";
