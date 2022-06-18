@@ -4,7 +4,13 @@
 
 A simple tool to monitor Xcode events (building and testing).
 
-<img src="Resources/xcmonitor_demo.gif" height="271px" alt="demo">
+<img src="Resources/xcmonitor_demo.gif" height="100px" alt="demo">
+
+## Logging event history
+
+This app can collect Xcode event types and elapsed time.
+
+<img src="Resources/xcmonitor_history.png" height="275px" alt="demo">
 
 ## Installation
 

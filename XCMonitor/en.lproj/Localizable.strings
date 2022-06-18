@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  XCMonitor
+
+  Created by Takuto Nakamura on 2022/05/01.
+  
+*/
+
+// MenuBar
+"noProject" = "No Project";
+"showProject" = "Show “PROJECT” Project on Xcode";
+"empty" = "Empty";
+"eventHistory" = "Event History";
+"preferences" = "Preferences…";
+"aboutApp" = "About XCMonitor";
+"terminateApp" = "Quit XCMonitor";
+
+// Alert
+"plistNotFoundTitle" = "Xcode.plist Not Found";
+"plistNotFoundMessage" = "XCMonitor cannot be used unless Xcode.app is installed and accessible.";
+
+"xcodeIsRunningTitle" = "Xcode.app Is Running";
+"xcodeIsRunningMessage" = "This operation cannot be performed while Xcode.app is running. Please quit Xcode.app.";
+
+"xchookConfirmTitle" = "Confirmation";
+"xchookConfirmMessage" = "Enabling XCHook will overwrite scripts already set in Xcode Behaviors.";
+"xchookConfirmEnable" = "Enable";
+"xchookConfirmCancel" = "Cancel";
+
+"projectNotOpenMessage" = "“PROJECT” Could Not Open";
+"projectNotOpenInformative" = "The file path may have changed or the project file may have been deleted.";
+
+// Preferences
+"general" = "General";
+"enableScripts" = "Enable scripts to hook Xcode events.";
+"startup:" = "Startup:";
+"launchAtLogin" = "Launch XCMonitor automatically at login.";

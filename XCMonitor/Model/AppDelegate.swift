@@ -6,16 +6,13 @@
 //
 
 import Cocoa
+import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    private var preferencesWC: NSWindowController?
     private var menuBarModel: MenuBarModel!
 
-    class var shared: AppDelegate {
-        return NSApplication.shared.delegate as! AppDelegate
-    }
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        NSApp.setActivationPolicy(.accessory)
         menuBarModel = MenuBarModel()
     }
 
@@ -23,29 +20,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 
-    @IBAction func openPreferences(_ sender: Any?) {
-        if preferencesWC == nil {
-            let sb = NSStoryboard(name: "PreferencesTab", bundle: nil)
-            let wc = (sb.instantiateInitialController() as! NSWindowController)
-            wc.window?.delegate = self
-            wc.window?.isMovableByWindowBackground = true
-            preferencesWC = wc
+    @objc func openPreferencesWindow() {
+        NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+        NSApp.windows.forEach { window in
+            if window.canBecomeMain {
+                window.orderFrontRegardless()
+                NSApp.activate(ignoringOtherApps: true)
+            }
         }
-        NSApp.activate(ignoringOtherApps: true)
-        preferencesWC?.showWindow(nil)
     }
 
-    @IBAction func openAbout(_ sender: Any?) {
+    @objc func openAboutWindow() {
         NSApp.activate(ignoringOtherApps: true)
         NSApp.orderFrontStandardAboutPanel()
-    }
-}
-
-extension AppDelegate: NSWindowDelegate {
-    func windowWillClose(_ notification: Notification) {
-        guard let window = notification.object as? NSWindow else { return }
-        if window === preferencesWC?.window {
-            preferencesWC = nil
-        }
     }
 }

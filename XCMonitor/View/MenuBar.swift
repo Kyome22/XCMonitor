@@ -54,14 +54,14 @@ final class MenuBar {
 
         let preferencesItem = NSMenuItem(
             title: "preferences".localized,
-            action: #selector(AppDelegate.openPreferences(_:))
+            action: #selector(AppDelegate.openPreferencesWindow)
         )
         menu.addItem(preferencesItem)
         menu.addItem(NSMenuItem.separator())
 
         let aboutItem = NSMenuItem(
             title: "aboutApp".localized,
-            action: #selector(AppDelegate.openAbout(_:))
+            action: #selector(AppDelegate.openAboutWindow)
         )
         menu.addItem(aboutItem)
 
@@ -79,7 +79,7 @@ final class MenuBar {
     func updateStatus(event: XCHookEvent, isDark: Bool) {
         if !event.project.isEmpty {
             projectItem.title = "showProject".localized
-                .replacingOccurrences(of: "NAME", with: event.project)
+                .replacingOccurrences(of: "PROJECT", with: event.project)
         }
 
         var imageName: String = ""
