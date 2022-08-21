@@ -21,3 +21,11 @@ Go to [Releases](https://github.com/Kyome22/XCMonitor/releases) and download the
 Open Preferences of XCMonitor and enable XCHook.
 
 <img src="Resources/preferences.png" height="180px" alt="preferences">
+
+## XCHook
+
+A library to hack the events (building and testing) of Xcode.app.<br>
+This library supports macOS (11+).<br>
+XCMonitor is a demonstration for XCHook.
+
+https://github.com/Kyome22/XCHook
