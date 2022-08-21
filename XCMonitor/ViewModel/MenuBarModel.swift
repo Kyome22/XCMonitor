@@ -10,7 +10,7 @@ import Combine
 import XCHook
 
 final class MenuBarModel: NSObject {
-    private let MAX_EVENTS: Int = 50
+    private let MAX_EVENTS: Int = 50 // max histories = 25
     private let menuBar = MenuBar()
 
     private var event: XCHookEvent
@@ -19,10 +19,7 @@ final class MenuBarModel: NSObject {
     private var cancellables = Set<AnyCancellable>()
 
     override init() {
-        event = XCHookEvent(project: "",
-                            path: "",
-                            status: .standby,
-                            timestamp: "0.0")
+        event = XCHookEvent.standby
         isDark = menuBar.isDark
         super.init()
 
@@ -42,6 +39,19 @@ final class MenuBarModel: NSObject {
                 self.addEvent(event)
                 if self.event.timestamp < event.timestamp {
                     self.event = event
+                    self.menuBar.updateStatus(event: self.event, isDark: self.isDark)
+                }
+            }
+            .store(in: &cancellables)
+
+        NSWorkspace.shared.notificationCenter
+            .publisher(for: NSWorkspace.didTerminateApplicationNotification)
+            .sink { [weak self] notification in
+                if let self = self,
+                   let _app = notification.userInfo?[NSWorkspace.applicationUserInfoKey],
+                   let app = _app as? NSRunningApplication,
+                   app.bundleIdentifier == XCODE_BUNDLE_IDENTIFIER {
+                    self.event = XCHookEvent.standby
                     self.menuBar.updateStatus(event: self.event, isDark: self.isDark)
                 }
             }
@@ -73,7 +83,7 @@ final class MenuBarModel: NSObject {
             return
         }
         let workspace = NSWorkspace.shared
-        if let xcodeURL = workspace.urlForApplication(withBundleIdentifier: "com.apple.dt.Xcode") {
+        if let xcodeURL = workspace.urlForApplication(withBundleIdentifier: XCODE_BUNDLE_IDENTIFIER) {
             let config = NSWorkspace.OpenConfiguration()
             workspace.open([url], withApplicationAt: xcodeURL, configuration: config)
         }

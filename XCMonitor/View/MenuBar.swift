@@ -77,7 +77,9 @@ final class MenuBar {
     }
 
     func updateStatus(event: XCHookEvent, isDark: Bool) {
-        if !event.project.isEmpty {
+        if event.project.isEmpty {
+            projectItem.title = "noProject".localized
+        } else {
             projectItem.title = "showProject".localized
                 .replacingOccurrences(of: "PROJECT", with: event.project)
         }

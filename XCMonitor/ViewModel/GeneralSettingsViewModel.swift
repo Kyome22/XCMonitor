@@ -53,7 +53,7 @@ final class GeneralSettingsViewModel: ObservableObject {
         // Show an alert to quit Xcode.app if it is running.
         let isRunningXcode = NSWorkspace.shared.runningApplications
             .contains(where: { app in
-                return app.bundleIdentifier == "com.apple.dt.Xcode"
+                return app.bundleIdentifier == XCODE_BUNDLE_IDENTIFIER
                 && app.localizedName == "Xcode"
             })
         if isRunningXcode {

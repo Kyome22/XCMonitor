@@ -8,7 +8,9 @@
 import Cocoa
 import SwiftUI
 
-class AppDelegate: NSObject, NSApplicationDelegate {
+let XCODE_BUNDLE_IDENTIFIER = "com.apple.dt.Xcode"
+
+final class AppDelegate: NSObject, NSApplicationDelegate {
     private var menuBarModel: MenuBarModel!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
