@@ -21,6 +21,7 @@ struct GeneralSettingsView: View {
                     Toggle(isOn: $viewModel.xchookEnabled) {
                         Text("enableScripts")
                     }
+                    .disabled(viewModel.showingAlert)
                     .onChange(of: viewModel.xchookEnabled) { newValue in
                         viewModel.toggleXCHookEnabled(newValue)
                     }

@@ -68,6 +68,7 @@ final class GeneralSettingsViewModel: ObservableObject {
             alertType = .xchookWarning
         } else {
             xchook.uninstall()
+            innerXchookEnabled = false
         }
     }
 
