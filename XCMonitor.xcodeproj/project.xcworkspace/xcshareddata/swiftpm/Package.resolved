@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "git@github.com:Kyome22/XCHook.git",
       "state" : {
-        "revision" : "3ecd6ab8bd9b5bcc43e010a0922921c064d3fa9c",
-        "version" : "0.1.4"
+        "revision" : "1002ec082b4c3101782396c9ac3e5dc131c97cb9",
+        "version" : "0.1.5"
       }
     }
   ],
