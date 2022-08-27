@@ -31,6 +31,8 @@
 "projectNotOpenInformative" = "ファイルパスが変更されたか、プロジェクトファイルが削除された可能性があります。";
 
 // Preferences
+"permission" = "XCMonitorを利用するにはフルディスクアクセスの権限が必要です。";
+"openSystemPreferences" = "システム環境設定を開く";
 "general" = "一般";
 "enableScripts" = "Xcodeのイベントをフックするスクリプトを有効にする。";
 "startup:" = "起動:";

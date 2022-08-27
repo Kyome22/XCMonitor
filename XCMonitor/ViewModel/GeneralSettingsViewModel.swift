@@ -38,6 +38,11 @@ final class GeneralSettingsViewModel: ObservableObject {
         launchAtLogin = innerLaunchAtLogin
     }
 
+    func openSystemPreferences() {
+        let path = "x-apple.systempreferences:com.apple.preference.security?Privacy_AllFiles"
+        NSWorkspace.shared.open(URL(string: path)!)
+    }
+
     func toggleXCHookEnabled(_ newValue: Bool) {
         if newValue == innerXchookEnabled {
             return

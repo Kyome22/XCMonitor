@@ -12,28 +12,39 @@ struct GeneralSettingsView: View {
 
     var body: some View {
         Form {
-            HStack {
-                VStack(alignment: .trailing, spacing: 8) {
-                    Text("XCHook:")
-                    Text("startup:")
+            VStack {
+                Text("permission")
+                
+                Button {
+                    viewModel.openSystemPreferences()
+                } label: {
+                    Text("openSystemPreferences")
                 }
-                VStack(alignment: .leading, spacing: 8) {
-                    Toggle(isOn: $viewModel.xchookEnabled) {
-                        Text("enableScripts")
+                Divider()
+                HStack {
+                    VStack(alignment: .trailing, spacing: 8) {
+                        Text("XCHook:")
+                        Text("startup:")
                     }
-                    .disabled(viewModel.showingAlert)
-                    .onChange(of: viewModel.xchookEnabled) { newValue in
-                        viewModel.toggleXCHookEnabled(newValue)
-                    }
-                    Toggle(isOn: $viewModel.launchAtLogin) {
-                        Text("launchAtLogin")
-                    }
-                    .onChange(of: viewModel.launchAtLogin) { newValue in
-                        viewModel.toggleLaunchAtLogin(newValue)
+                    VStack(alignment: .leading, spacing: 8) {
+                        Toggle(isOn: $viewModel.xchookEnabled) {
+                            Text("enableScripts")
+                        }
+                        .disabled(viewModel.showingAlert)
+                        .onChange(of: viewModel.xchookEnabled) { newValue in
+                            viewModel.toggleXCHookEnabled(newValue)
+                        }
+                        Toggle(isOn: $viewModel.launchAtLogin) {
+                            Text("launchAtLogin")
+                        }
+                        .onChange(of: viewModel.launchAtLogin) { newValue in
+                            viewModel.toggleLaunchAtLogin(newValue)
+                        }
                     }
                 }
             }
         }
+        .fixedSize()
         .padding(20)
         .alert(isPresented: $viewModel.showingAlert) {
             switch viewModel.alertType {

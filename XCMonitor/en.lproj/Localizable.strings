@@ -31,6 +31,8 @@
 "projectNotOpenInformative" = "The file path may have changed or the project file may have been deleted.";
 
 // Preferences
+"permission" = "XCMonitor requires the permission of Full Disk Access.";
+"openSystemPreferences" = "Open System Preferences";
 "general" = "General";
 "enableScripts" = "Enable scripts to hook Xcode events.";
 "startup:" = "Startup:";
