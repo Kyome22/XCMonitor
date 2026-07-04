@@ -19,5 +19,6 @@ struct XCMonitorApp: App {
     var body: some Scene {
         MenuBarScene()
         SettingsScene()
+        ErrorAlertScene()
     }
 }

@@ -1,5 +1,5 @@
 {
-  "originHash" : "e05a8226a82c2d5fc6a0a0544780f56c4df4b91e4fc8fc54c98d9d16c4253358",
+  "originHash" : "2cbbcd927124d07802259362aadb239c26e29766b16bb9aac3d7af17f7a27150",
   "pins" : [
     {
       "identity" : "allocatedunfairlock",
@@ -38,12 +38,21 @@
       }
     },
     {
+      "identity" : "wormholekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Kyome22/WormholeKit.git",
+      "state" : {
+        "revision" : "1563ac110dfc0c5b4ee34fb1f60fc0f4b9a5f3dc",
+        "version" : "1.0.0"
+      }
+    },
+    {
       "identity" : "xchook",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Kyome22/XCHook.git",
       "state" : {
-        "revision" : "303e87554bcabec88279734940375ffb595d43ff",
-        "version" : "1.0.0"
+        "revision" : "77c8ed9b1b6afc047c31a17526ec53ed5036e1f0",
+        "version" : "1.1.0"
       }
     }
   ],

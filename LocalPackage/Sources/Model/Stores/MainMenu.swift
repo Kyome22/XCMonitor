@@ -16,7 +16,6 @@ import XCHook
 @MainActor @Observable
 public final class MainMenu: Composable {
     private let fileManagerClient: FileManagerClient
-    private let nsAlertClient: NSAlertClient
     private let nsAppClient: NSAppClient
     private let nsWorkspaceClient: NSWorkspaceClient
     private let xchookReceiverClient: XCHookReceiverClient
@@ -39,7 +38,6 @@ public final class MainMenu: Composable {
         action: @escaping (Action) async -> Void = { _ in }
     ) {
         self.fileManagerClient = appDependencies.fileManagerClient
-        self.nsAlertClient = appDependencies.nsAlertClient
         self.nsAppClient = appDependencies.nsAppClient
         self.nsWorkspaceClient = appDependencies.nsWorkspaceClient
         self.xchookReceiverClient = appDependencies.xchookReceiverClient
@@ -87,13 +85,13 @@ public final class MainMenu: Composable {
                 currentEvent = .standby
             }
 
-        case .openProjectButtonTapped:
+        case let .openProjectButtonTapped(sendIntoWormhole):
             guard !currentEvent.path.isEmpty else { return }
-            await openXcodeProject(with: URL(fileURLWithPath: currentEvent.path))
+            await openXcodeProject(with: URL(fileURLWithPath: currentEvent.path), action: sendIntoWormhole)
 
-        case let .historyButtonTapped(eventHistory):
+        case let .historyButtonTapped(eventHistory, sendIntoWormhole):
             guard let projectURL = eventHistory.projectURL else { return }
-            await openXcodeProject(with: projectURL)
+            await openXcodeProject(with: projectURL, action: sendIntoWormhole)
 
         case .settingsLinkPreActionTriggered:
             nsAppClient.activate(true)
@@ -107,13 +105,9 @@ public final class MainMenu: Composable {
         }
     }
 
-    private func openXcodeProject(with url: URL) async {
+    private func openXcodeProject(with url: URL, action sendIntoWormhole: SendIntoWormholeActionWrapper) async {
         guard fileManagerClient.fileExists(url.path) else {
-            let alert = NSAlert()
-            alert.alertStyle = .warning
-            alert.messageText = String(localized: "projectNotOpenMessage\(url.lastPathComponent)", bundle: .module)
-            alert.informativeText = String(localized: "projectNotOpenInformative", bundle: .module)
-            _ = nsAlertClient.runModal(alert)
+            sendIntoWormhole(id: .errorAlert, value: true)
             return
         }
         guard let xcodeURL = nsWorkspaceClient.urlForApplication(xcodeBundleIdentifier) else {
@@ -132,8 +126,8 @@ public final class MainMenu: Composable {
         case onDisappear
         case xchookEventReceived(XCHookEvent)
         case applicationTerminated(String)
-        case openProjectButtonTapped
-        case historyButtonTapped(EventHistory)
+        case openProjectButtonTapped(SendIntoWormholeActionWrapper)
+        case historyButtonTapped(EventHistory, SendIntoWormholeActionWrapper)
         case settingsLinkPreActionTriggered
         case aboutButtonTapped
         case quitButtonTapped

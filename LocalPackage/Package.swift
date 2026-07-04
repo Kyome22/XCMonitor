@@ -30,7 +30,8 @@ let package = Package(
         .package(url: "https://github.com/apple/swift-async-algorithms.git", exact: "1.1.4"),
         .package(url: "https://github.com/apple/swift-log.git", exact: "1.13.2"),
         .package(url: "https://github.com/Kyome22/AllocatedUnfairLock.git", exact: "1.0.0"),
-        .package(url: "https://github.com/Kyome22/XCHook.git", exact: "1.0.0"),
+        .package(url: "https://github.com/Kyome22/WormholeKit.git", exact: "1.0.0"),
+        .package(url: "https://github.com/Kyome22/XCHook.git", exact: "1.1.0"),
     ],
     targets: [
         .target(
@@ -48,9 +49,6 @@ let package = Package(
             dependencies: [
                 "DataSource",
             ],
-            resources: [
-                .process("Resources"),
-            ],
             swiftSettings: swiftSettings
         ),
         .target(
@@ -58,9 +56,7 @@ let package = Package(
             dependencies: [
                 "DataSource",
                 "Model",
-            ],
-            resources: [
-                .process("Resources"),
+                .product(name: "WormholeKit", package: "WormholeKit"),
             ],
             swiftSettings: swiftSettings
         ),

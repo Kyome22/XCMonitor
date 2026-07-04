@@ -13,12 +13,15 @@ import Model
 import SwiftUI
 
 struct MainMenuView: View {
+    @Environment(\.sendIntoWormhole) private var sendIntoWormhole
     @StateObject var store: MainMenu
 
     var body: some View {
         Button {
             Task {
-                await store.send(.openProjectButtonTapped)
+                await store.send(.openProjectButtonTapped(.init(action: {
+                    sendIntoWormhole(id: $0, value: $1)
+                })))
             }
         } label: {
             if store.currentEvent.project.isEmpty {
@@ -39,7 +42,9 @@ struct MainMenuView: View {
                 ForEach(store.eventHistories, id: \.self) { eventHistory in
                     Button {
                         Task {
-                            await store.send(.historyButtonTapped(eventHistory))
+                            await store.send(.historyButtonTapped(eventHistory, .init(action: {
+                                sendIntoWormhole(id: $0, value: $1)
+                            })))
                         }
                     } label: {
                         Image(eventHistory.eventType.imageName, bundle: .module)
@@ -52,7 +57,7 @@ struct MainMenuView: View {
         }
         Divider()
         SettingsLink {
-            Text("preferences", bundle: .module)
+            Text("settings", bundle: .module)
         }
         .buttonStyle(.preAction {
             await store.send(.settingsLinkPreActionTriggered)
@@ -70,7 +75,7 @@ struct MainMenuView: View {
                 await store.send(.quitButtonTapped)
             }
         } label: {
-            Text("terminateApp", bundle: .module)
+            Text("quitApp", bundle: .module)
         }
     }
 }
