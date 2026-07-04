@@ -1,16 +1,14 @@
 # XCMonitor
 
-<img src="Resources/xcmonitor_icon.png" height="70px" alt="icon">
-
 A simple tool to monitor Xcode events (building and testing).
 
-<img src="Resources/xcmonitor_demo.gif" height="100px" alt="demo">
+<img height="100" alt="Image" src="https://github.com/user-attachments/assets/4e84bc68-ea73-4a06-a0ae-46e2696b6928" />
 
 ## Logging event history
 
 This app can collect Xcode event types and elapsed time.
 
-<img src="Resources/xcmonitor_history.png" height="275px" alt="demo">
+<img height="275" alt="Image" src="https://github.com/user-attachments/assets/3fe18c58-5e3c-42a7-b9e6-759b420a8fea" />
 
 ## Architecture
 
@@ -26,7 +24,7 @@ Go to [Releases](https://github.com/Kyome22/XCMonitor/releases) and download the
 
 Open Preferences of XCMonitor and enable XCHook.
 
-<img src="Resources/preferences.png" height="180px" alt="preferences">
+<img height="159" alt="Image" src="https://github.com/user-attachments/assets/1e41914c-f3a1-4c57-a561-3c60e133328d" />
 
 ## XCHook
 
