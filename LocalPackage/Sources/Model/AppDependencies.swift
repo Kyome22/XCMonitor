@@ -23,7 +23,7 @@ public struct AppDependencies: Sendable {
     public var xchookReceiverClient = XCHookReceiverClient.liveValue
     public var xcodeApplicationClient = XcodeApplicationClient.liveValue
 
-    static let shared = AppDependencies()
+    public static let shared = AppDependencies()
 }
 
 extension EnvironmentValues {

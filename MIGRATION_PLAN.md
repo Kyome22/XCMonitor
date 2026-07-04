@@ -5,7 +5,7 @@
 - [x] Phase 1 — Scaffold
 - [x] Phase 2 — DataSource
 - [x] Phase 3 — Model
-- [ ] Phase 4 — UserInterface
+- [x] Phase 4 — UserInterface
 - [ ] Phase 5 — Cutover (user smoke test passed)
 - [ ] Phase 6 — Cleanup
 
@@ -92,18 +92,18 @@ likewise skipped (no persisted keys).
 |---|---|---|
 | XCMonitor/XCMonitorApp.swift | rewrite | shell `XCMonitor/XCMonitorApp.swift` (AppMain template; MenuBarScene + SettingsScene) |
 | XCMonitor/Model/AppDelegate.swift | rewrite ✅ | `LocalPackage/Sources/Model/AppDelegate.swift` (template; about/preferences actions move to MainMenu store) |
-| XCMonitor/Model/EventHistory.swift | split ✅ (DataSource+Model done, imageName pends Phase 4) | value core → `DataSource/Entities/EventHistory.swift` + `EventType`; pairing algorithm from MenuBarModel.addEvent joins it as pure logic; `imageName`/display name → `UserInterface/Extensions/EventType+Extension.swift` |
+| XCMonitor/Model/EventHistory.swift | split ✅ | value core → `DataSource/Entities/EventHistory.swift` + `EventType`; pairing algorithm from MenuBarModel.addEvent joins it as pure logic; `imageName`/display name → `UserInterface/Extensions/EventType+Extension.swift` |
 | XCMonitor/ViewModel/MenuBarModel.swift | rewrite ✅ | `Model/Stores/MainMenu.swift` (event list, current event, histories, open-project actions) |
 | XCMonitor/ViewModel/GeneralSettingsViewModel.swift | rewrite ✅ | `Model/Stores/GeneralSettings.swift` + `Model/Services/XCHookService.swift` + `DataSource/Repositories/LaunchAtLoginRepository.swift` |
-| XCMonitor/View/MenuBar.swift | rewrite | `UserInterface/Views/MainMenuView.swift` (+ label image logic) via `Scenes/MenuBarScene.swift` |
-| XCMonitor/View/HistoryMenuItem.swift | drop | SwiftUI Button rows carry `EventHistory` directly |
-| XCMonitor/View/Extensions.swift | drop | `.localized`/`isDark`/`state`/`isOn` all obsolete under xcstrings + asset variants + SwiftUI |
-| XCMonitor/View/SettingsView.swift | port | `UserInterface/Views/SettingsView.swift` (TabView, General tab) + `Scenes/SettingsScene.swift` |
-| XCMonitor/View/GeneralSettingsView.swift | rewrite | `UserInterface/Views/GeneralSettingsView.swift` (store-driven, alert cases) |
-| XCMonitor/en.lproj/Localizable.strings, ja.lproj | convert | `UserInterface/Resources/Localizable.xcstrings` (+ trimmed Model-target catalog for the NSAlert strings, QuickMIDI precedent) |
+| XCMonitor/View/MenuBar.swift | rewrite ✅ | `UserInterface/Views/MainMenuView.swift` (+ label image logic) via `Scenes/MenuBarScene.swift` |
+| XCMonitor/View/HistoryMenuItem.swift | drop ✅ | SwiftUI Button rows carry `EventHistory` directly |
+| XCMonitor/View/Extensions.swift | drop ✅ | `.localized`/`isDark`/`state`/`isOn` all obsolete under xcstrings + asset variants + SwiftUI |
+| XCMonitor/View/SettingsView.swift | port ✅ | `UserInterface/Views/SettingsView.swift` (TabView, General tab) + `Scenes/SettingsScene.swift` |
+| XCMonitor/View/GeneralSettingsView.swift | rewrite ✅ | `UserInterface/Views/GeneralSettingsView.swift` (store-driven, alert cases) |
+| XCMonitor/en.lproj/Localizable.strings, ja.lproj | convert ✅ | `UserInterface/Resources/Localizable.xcstrings` (+ trimmed Model-target catalog for the NSAlert strings, QuickMIDI precedent) |
 | XCMonitor/Assets.xcassets AppIcon + AccentColor | move | shell `XCMonitor/Assets.xcassets` (icon stays in shell) |
-| XCMonitor/Assets.xcassets MenuBar/* (7 status × light/dark) | merge | `UserInterface/Resources/Media.xcassets` — one imageset per status with Any/Dark appearance variants |
-| XCMonitor/Assets.xcassets MenuItem/* (4 result icons) | move | `UserInterface/Resources/Media.xcassets` |
+| XCMonitor/Assets.xcassets MenuBar/* (7 status × light/dark) | merge ✅ | `UserInterface/Resources/Media.xcassets` — one imageset per status with Any/Dark appearance variants |
+| XCMonitor/Assets.xcassets MenuItem/* (4 result icons) | move ✅ (copied) | `UserInterface/Resources/Media.xcassets` |
 | XCMonitor/Assets.xcassets General.imageset | drop | unreferenced (tab uses systemImage "gear") |
 | XCMonitor/Info.plist (LSUIElement) | replace | pbxproj `INFOPLIST_KEY_LSUIElement = YES` + minimal shell Info.plist |
 | XCMonitor/XCMonitor.entitlements | carry verbatim | shell `XCMonitor/XCMonitor.entitlements` |

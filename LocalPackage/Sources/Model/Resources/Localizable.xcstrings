@@ -28,7 +28,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“%@”を開けませんでした。"
+            "value" : "“%@”が開けませんでした。"
           }
         }
       }

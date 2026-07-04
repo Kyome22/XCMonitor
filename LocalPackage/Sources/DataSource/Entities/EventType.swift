@@ -10,11 +10,11 @@
 
 import XCHook
 
-public enum EventType: String, Sendable {
-    case buildSucceeded = "Build Succeeded"
-    case buildFailed = "Build Failed"
-    case testSucceeded = "Test Succeeded"
-    case testFailed = "Test Failed"
+public enum EventType: Sendable {
+    case buildSucceeded
+    case buildFailed
+    case testSucceeded
+    case testFailed
 
     init?(start: XCHookStatus, finish: XCHookStatus) {
         switch (start, finish) {
