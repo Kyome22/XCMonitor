@@ -12,9 +12,16 @@ import DataSource
 import SwiftUI
 
 public struct AppDependencies: Sendable {
-    // MIGRATION: Phase 2 adds one property per dependency client, alphabetical, all defaulting to .liveValue.
     public var appStateClient = AppStateClient.liveValue
+    public var fileManagerClient = FileManagerClient.liveValue
     public var loggingSystemClient = LoggingSystemClient.liveValue
+    public var nsAlertClient = NSAlertClient.liveValue
+    public var nsAppClient = NSAppClient.liveValue
+    public var nsWorkspaceClient = NSWorkspaceClient.liveValue
+    public var smAppServiceClient = SMAppServiceClient.liveValue
+    public var xchookClient = XCHookClient.liveValue
+    public var xchookReceiverClient = XCHookReceiverClient.liveValue
+    public var xcodeApplicationClient = XcodeApplicationClient.liveValue
 
     static let shared = AppDependencies()
 }
@@ -25,13 +32,28 @@ extension EnvironmentValues {
 
 extension AppDependencies {
     public static func testDependencies(
-        // MIGRATION: Keep this parameter list in sync with the stored properties above.
         appStateClient: AppStateClient = .testValue,
-        loggingSystemClient: LoggingSystemClient = .testValue
+        fileManagerClient: FileManagerClient = .testValue,
+        loggingSystemClient: LoggingSystemClient = .testValue,
+        nsAlertClient: NSAlertClient = .testValue,
+        nsAppClient: NSAppClient = .testValue,
+        nsWorkspaceClient: NSWorkspaceClient = .testValue,
+        smAppServiceClient: SMAppServiceClient = .testValue,
+        xchookClient: XCHookClient = .testValue,
+        xchookReceiverClient: XCHookReceiverClient = .testValue,
+        xcodeApplicationClient: XcodeApplicationClient = .testValue
     ) -> AppDependencies {
         AppDependencies(
             appStateClient: appStateClient,
-            loggingSystemClient: loggingSystemClient
+            fileManagerClient: fileManagerClient,
+            loggingSystemClient: loggingSystemClient,
+            nsAlertClient: nsAlertClient,
+            nsAppClient: nsAppClient,
+            nsWorkspaceClient: nsWorkspaceClient,
+            smAppServiceClient: smAppServiceClient,
+            xchookClient: xchookClient,
+            xchookReceiverClient: xchookReceiverClient,
+            xcodeApplicationClient: xcodeApplicationClient
         )
     }
 }

@@ -48,6 +48,9 @@ let package = Package(
             dependencies: [
                 "DataSource",
             ],
+            resources: [
+                .process("Resources"),
+            ],
             swiftSettings: swiftSettings
         ),
         .target(

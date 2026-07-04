@@ -8,23 +8,31 @@
  This software is released under the MIT License, see LICENSE.
  */
 
+import Foundation
 import Logging
 
 public enum ErrorEvent {
-    // MIGRATION: One case per recoverable failure worth logging, named xxxFailed(any Error):
-    // case importingFrameImagesFailed(any Error)
-    // While this enum has no cases the compiler warns "will never be executed" in LogService — it
-    // disappears once the first case is added.
+    case openingXcodeProjectFailed(any Error)
+    case restartingXcodeFailed
+    case xcodeApplicationNotFound
 
     public var message: Logger.Message {
         switch self {
-        // MIGRATION: Sentence-style message per case, e.g. "Failed importing frame images."
+        case .openingXcodeProjectFailed:
+            "Failed to open the Xcode project."
+        case .restartingXcodeFailed:
+            "Failed to restart Xcode."
+        case .xcodeApplicationNotFound:
+            "Xcode application is not found."
         }
     }
 
     public var metadata: Logger.Metadata? {
         switch self {
-        // MIGRATION: Bind associated errors and emit ["cause": "\(error.localizedDescription)"].
+        case let .openingXcodeProjectFailed(error):
+            ["cause": "\(error.localizedDescription)"]
+        case .restartingXcodeFailed, .xcodeApplicationNotFound:
+            nil
         }
     }
 }

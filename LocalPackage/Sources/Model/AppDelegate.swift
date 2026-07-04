@@ -17,7 +17,6 @@ public final class AppDelegate: NSObject, NSApplicationDelegate {
     public func applicationDidFinishLaunching(_ notification: Notification) {
         let logService = LogService(appDependencies)
         logService.bootstrap()
-        // MIGRATION: Instantiate long-lived Services here if Phase 3 needs any.
         logService.notice(.launchApp)
     }
 }

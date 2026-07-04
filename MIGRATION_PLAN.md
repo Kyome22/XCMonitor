@@ -4,7 +4,7 @@
 - [x] Phase 0 — Inventory (user approved)
 - [x] Phase 1 — Scaffold
 - [x] Phase 2 — DataSource
-- [ ] Phase 3 — Model
+- [x] Phase 3 — Model
 - [ ] Phase 4 — UserInterface
 - [ ] Phase 5 — Cutover (user smoke test passed)
 - [ ] Phase 6 — Cleanup
@@ -91,10 +91,10 @@ likewise skipped (no persisted keys).
 | Old path | Action | New path / reason |
 |---|---|---|
 | XCMonitor/XCMonitorApp.swift | rewrite | shell `XCMonitor/XCMonitorApp.swift` (AppMain template; MenuBarScene + SettingsScene) |
-| XCMonitor/Model/AppDelegate.swift | rewrite | `LocalPackage/Sources/Model/AppDelegate.swift` (template; about/preferences actions move to MainMenu store) |
-| XCMonitor/Model/EventHistory.swift | split ✅ (DataSource part done) | value core → `DataSource/Entities/EventHistory.swift` + `EventType`; pairing algorithm from MenuBarModel.addEvent joins it as pure logic; `imageName`/display name → `UserInterface/Extensions/EventType+Extension.swift` |
-| XCMonitor/ViewModel/MenuBarModel.swift | rewrite | `Model/Stores/MainMenu.swift` (event list, current event, histories, open-project actions) |
-| XCMonitor/ViewModel/GeneralSettingsViewModel.swift | rewrite | `Model/Stores/GeneralSettings.swift` + `Model/Services/XCHookService.swift` + `DataSource/Repositories/LaunchAtLoginRepository.swift` |
+| XCMonitor/Model/AppDelegate.swift | rewrite ✅ | `LocalPackage/Sources/Model/AppDelegate.swift` (template; about/preferences actions move to MainMenu store) |
+| XCMonitor/Model/EventHistory.swift | split ✅ (DataSource+Model done, imageName pends Phase 4) | value core → `DataSource/Entities/EventHistory.swift` + `EventType`; pairing algorithm from MenuBarModel.addEvent joins it as pure logic; `imageName`/display name → `UserInterface/Extensions/EventType+Extension.swift` |
+| XCMonitor/ViewModel/MenuBarModel.swift | rewrite ✅ | `Model/Stores/MainMenu.swift` (event list, current event, histories, open-project actions) |
+| XCMonitor/ViewModel/GeneralSettingsViewModel.swift | rewrite ✅ | `Model/Stores/GeneralSettings.swift` + `Model/Services/XCHookService.swift` + `DataSource/Repositories/LaunchAtLoginRepository.swift` |
 | XCMonitor/View/MenuBar.swift | rewrite | `UserInterface/Views/MainMenuView.swift` (+ label image logic) via `Scenes/MenuBarScene.swift` |
 | XCMonitor/View/HistoryMenuItem.swift | drop | SwiftUI Button rows carry `EventHistory` directly |
 | XCMonitor/View/Extensions.swift | drop | `.localized`/`isDark`/`state`/`isOn` all obsolete under xcstrings + asset variants + SwiftUI |

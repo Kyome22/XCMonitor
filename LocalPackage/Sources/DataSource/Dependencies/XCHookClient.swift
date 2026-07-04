@@ -11,22 +11,36 @@
 import XCHook
 
 public struct XCHookClient: DependencyClient {
-    public var make: @Sendable () -> XCHook?
-    public var isInstalled: @Sendable (XCHook) -> Bool
-    public var install: @Sendable (XCHook) throws -> Void
-    public var uninstall: @Sendable (XCHook) throws -> Void
+    public var isAvailable: @Sendable () -> Bool
+    public var isInstalled: @Sendable () -> Bool
+    public var install: @Sendable () throws -> Void
+    public var uninstall: @Sendable () throws -> Void
 
     public static let liveValue = Self(
-        make: { XCHook() },
-        isInstalled: { $0.isInstalled() },
-        install: { try $0.install() },
-        uninstall: { try $0.uninstall() }
+        isAvailable: { XCHook() != nil },
+        isInstalled: { XCHook()?.isInstalled() ?? false },
+        install: {
+            guard let xchook = XCHook() else {
+                throw ClientError.xchookUnavailable
+            }
+            try xchook.install()
+        },
+        uninstall: {
+            guard let xchook = XCHook() else {
+                throw ClientError.xchookUnavailable
+            }
+            try xchook.uninstall()
+        }
     )
 
     public static let testValue = Self(
-        make: { nil },
-        isInstalled: { _ in false },
-        install: { _ in },
-        uninstall: { _ in }
+        isAvailable: { false },
+        isInstalled: { false },
+        install: {},
+        uninstall: {}
     )
+
+    public enum ClientError: Error {
+        case xchookUnavailable
+    }
 }

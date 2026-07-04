@@ -14,7 +14,6 @@ import Logging
 public enum CriticalEvent {
     case setupFailed(any Error)
     case unknown(any Error)
-    // MIGRATION: Add app-specific unrecoverable failures. `unknown` is a last resort only.
 
     public var message: Logger.Message {
         switch self {
