@@ -12,34 +12,24 @@ struct GeneralSettingsView: View {
 
     var body: some View {
         Form {
-            VStack {
-                Text("permission")
-                
-                Button {
-                    viewModel.openSystemPreferences()
-                } label: {
-                    Text("openSystemPreferences")
+            HStack {
+                VStack(alignment: .trailing, spacing: 8) {
+                    Text("XCHook:")
+                    Text("startup:")
                 }
-                Divider()
-                HStack {
-                    VStack(alignment: .trailing, spacing: 8) {
-                        Text("XCHook:")
-                        Text("startup:")
+                VStack(alignment: .leading, spacing: 8) {
+                    Toggle(isOn: $viewModel.xchookEnabled) {
+                        Text("enableScripts")
                     }
-                    VStack(alignment: .leading, spacing: 8) {
-                        Toggle(isOn: $viewModel.xchookEnabled) {
-                            Text("enableScripts")
-                        }
-                        .disabled(viewModel.showingAlert)
-                        .onChange(of: viewModel.xchookEnabled) { newValue in
-                            viewModel.toggleXCHookEnabled(newValue)
-                        }
-                        Toggle(isOn: $viewModel.launchAtLogin) {
-                            Text("launchAtLogin")
-                        }
-                        .onChange(of: viewModel.launchAtLogin) { newValue in
-                            viewModel.toggleLaunchAtLogin(newValue)
-                        }
+                    .disabled(viewModel.showingAlert)
+                    .onChange(of: viewModel.xchookEnabled) { _, newValue in
+                        viewModel.toggleXCHookEnabled(newValue)
+                    }
+                    Toggle(isOn: $viewModel.launchAtLogin) {
+                        Text("launchAtLogin")
+                    }
+                    .onChange(of: viewModel.launchAtLogin) { _, newValue in
+                        viewModel.toggleLaunchAtLogin(newValue)
                     }
                 }
             }
@@ -51,9 +41,6 @@ struct GeneralSettingsView: View {
             case .xcodePlistNotFound:
                 return Alert(title: Text("plistNotFoundTitle"),
                              message: Text("plistNotFoundMessage"))
-            case .xcodeIsRunning:
-                return Alert(title: Text("xcodeIsRunningTitle"),
-                             message: Text("xcodeIsRunningMessage"))
             case .xchookWarning:
                 let enableButton = Alert.Button.default(Text("xchookConfirmEnable")) {
                     viewModel.react(for: true)
@@ -65,6 +52,18 @@ struct GeneralSettingsView: View {
                              message: Text("xchookConfirmMessage"),
                              primaryButton: enableButton,
                              secondaryButton: cancelButton)
+            case .xcodeRestart:
+                let restartButton = Alert.Button.default(Text("xcodeRestartNow")) {
+                    viewModel.restartXcode()
+                }
+                let laterButton = Alert.Button.cancel(Text("xcodeRestartLater"))
+                return Alert(title: Text("xcodeRestartTitle"),
+                             message: Text("xcodeRestartMessage"),
+                             primaryButton: restartButton,
+                             secondaryButton: laterButton)
+            case .operationFailed:
+                return Alert(title: Text("operationFailedTitle"),
+                             message: Text("operationFailedMessage"))
             }
         }
     }

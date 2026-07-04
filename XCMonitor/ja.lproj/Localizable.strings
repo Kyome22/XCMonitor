@@ -19,8 +19,13 @@
 "plistNotFoundTitle" = "Xcode.plistが見つかりませんでした。";
 "plistNotFoundMessage" = "XCMonitorはXocde.appがインストールされ、アクセス可能な状態でないと使用できません。";
 
-"xcodeIsRunningTitle" = "Xcode.appが起動中です。";
-"xcodeIsRunningMessage" = "Xcode.appが起動している間はこの操作を行うことはできません。Xcode.appを終了してください。";
+"xcodeRestartTitle" = "Xcode.appの再起動";
+"xcodeRestartMessage" = "変更を反映するにはXcode.appの再起動が必要です。";
+"xcodeRestartNow" = "今すぐ再起動";
+"xcodeRestartLater" = "あとで";
+
+"operationFailedTitle" = "操作に失敗しました。";
+"operationFailedMessage" = "Xcode Behaviorsの設定を更新できませんでした。";
 
 "xchookConfirmTitle" = "確認事項";
 "xchookConfirmMessage" = "XCHookを有効にすると、Xcode Behaviorsですでに設定されているスクリプトが上書きされます。";
@@ -31,8 +36,6 @@
 "projectNotOpenInformative" = "ファイルパスが変更されたか、プロジェクトファイルが削除された可能性があります。";
 
 // Preferences
-"permission" = "XCMonitorを利用するにはフルディスクアクセスの権限が必要です。";
-"openSystemPreferences" = "システム環境設定を開く";
 "general" = "一般";
 "enableScripts" = "Xcodeのイベントをフックするスクリプトを有効にする。";
 "startup:" = "起動:";

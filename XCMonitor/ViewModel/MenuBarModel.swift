@@ -17,6 +17,7 @@ final class MenuBarModel: NSObject {
     private var eventList = [XCHookEvent]()
     private var isDark: Bool
     private var cancellables = Set<AnyCancellable>()
+    private var eventTask: Task<Void, Never>?
 
     override init() {
         event = XCHookEvent.standby
@@ -33,8 +34,8 @@ final class MenuBarModel: NSObject {
             }
             .store(in: &cancellables)
 
-        XCHookReceiver.shared.xchookPublisher
-            .sink { [weak self] event in
+        eventTask = Task { @MainActor [weak self] in
+            for await event in XCHookReceiver.events {
                 guard let self = self else { return }
                 self.addEvent(event)
                 if self.event.timestamp < event.timestamp {
@@ -42,7 +43,7 @@ final class MenuBarModel: NSObject {
                     self.menuBar.updateStatus(event: self.event, isDark: self.isDark)
                 }
             }
-            .store(in: &cancellables)
+        }
 
         NSWorkspace.shared.notificationCenter
             .publisher(for: NSWorkspace.didTerminateApplicationNotification)
@@ -56,6 +57,10 @@ final class MenuBarModel: NSObject {
                 }
             }
             .store(in: &cancellables)
+    }
+
+    deinit {
+        eventTask?.cancel()
     }
 
     @IBAction func openProject(_ sender: Any?) {

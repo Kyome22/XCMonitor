@@ -14,7 +14,6 @@
 		1C58B00F281D8DF90022595E /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B00E281D8DF90022595E /* MenuBar.swift */; };
 		1C58B011281D8E380022595E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B010281D8E380022595E /* Extensions.swift */; };
 		1C58B020281EDDCF0022595E /* GeneralSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B01F281EDDCF0022595E /* GeneralSettingsViewModel.swift */; };
-		1C58B023281EE02D0022595E /* XCHook in Frameworks */ = {isa = PBXBuildFile; productRef = 1C58B022281EE02D0022595E /* XCHook */; };
 		1C5BEE6D283E91B000AC339D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BEE6C283E91B000AC339D /* AppDelegate.swift */; };
 		1C5BEE7B283E924500AC339D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BEE7A283E924500AC339D /* main.swift */; };
 		1C5BEE7D283E92FD00AC339D /* XCMonitorLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1C5BEE6A283E91B000AC339D /* XCMonitorLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -23,6 +22,7 @@
 		1CE199642854D9D00040CE90 /* XCMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE199632854D9D00040CE90 /* XCMonitorApp.swift */; };
 		1CE199662854DB580040CE90 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE199652854DB580040CE90 /* SettingsView.swift */; };
 		1CE199682854DB910040CE90 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE199672854DB910040CE90 /* GeneralSettingsView.swift */; };
+		1CFF39892FF8F9D4006E2166 /* XCHook in Frameworks */ = {isa = PBXBuildFile; productRef = 1CFF39882FF8F9D4006E2166 /* XCHook */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C58B023281EE02D0022595E /* XCHook in Frameworks */,
+				1CFF39892FF8F9D4006E2166 /* XCHook in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +173,7 @@
 			);
 			name = XCMonitor;
 			packageProductDependencies = (
-				1C58B022281EE02D0022595E /* XCHook */,
+				1CFF39882FF8F9D4006E2166 /* XCHook */,
 			);
 			productName = XCMonitor;
 			productReference = 1C58AFF2281D8AE70022595E /* XCMonitor.app */;
@@ -225,7 +225,7 @@
 			);
 			mainGroup = 1C58AFE9281D8AE70022595E;
 			packageReferences = (
-				1C58B021281EE02D0022595E /* XCRemoteSwiftPackageReference "XCHook" */,
+				1CFF39872FF8F9D4006E2166 /* XCRemoteSwiftPackageReference "XCHook" */,
 			);
 			productRefGroup = 1C58AFF3281D8AE70022595E /* Products */;
 			projectDirPath = "";
@@ -348,7 +348,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -402,7 +402,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -489,7 +489,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.XCMonitorLauncher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -519,7 +519,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.XCMonitorLauncher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -562,20 +562,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1C58B021281EE02D0022595E /* XCRemoteSwiftPackageReference "XCHook" */ = {
+		1CFF39872FF8F9D4006E2166 /* XCRemoteSwiftPackageReference "XCHook" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:Kyome22/XCHook.git";
+			repositoryURL = "https://github.com/Kyome22/XCHook.git";
 			requirement = {
 				kind = exactVersion;
-				version = 0.1.6;
+				version = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1C58B022281EE02D0022595E /* XCHook */ = {
+		1CFF39882FF8F9D4006E2166 /* XCHook */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1C58B021281EE02D0022595E /* XCRemoteSwiftPackageReference "XCHook" */;
+			package = 1CFF39872FF8F9D4006E2166 /* XCRemoteSwiftPackageReference "XCHook" */;
 			productName = XCHook;
 		};
 /* End XCSwiftPackageProductDependency section */

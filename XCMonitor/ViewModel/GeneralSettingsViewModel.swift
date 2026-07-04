@@ -6,15 +6,15 @@
 //
 
 import SwiftUI
-import Combine
 import XCHook
 import ServiceManagement
 
 final class GeneralSettingsViewModel: ObservableObject {
     enum AlertType {
         case xcodePlistNotFound
-        case xcodeIsRunning
         case xchookWarning
+        case xcodeRestart
+        case operationFailed
     }
 
     var innerXchookEnabled: Bool = false
@@ -38,11 +38,6 @@ final class GeneralSettingsViewModel: ObservableObject {
         launchAtLogin = innerLaunchAtLogin
     }
 
-    func openSystemPreferences() {
-        let path = "x-apple.systempreferences:com.apple.preference.security?Privacy_AllFiles"
-        NSWorkspace.shared.open(URL(string: path)!)
-    }
-
     func toggleXCHookEnabled(_ newValue: Bool) {
         if newValue == innerXchookEnabled {
             return
@@ -50,40 +45,56 @@ final class GeneralSettingsViewModel: ObservableObject {
         guard let xchook = xchook else {
             innerXchookEnabled = false
             xchookEnabled = innerXchookEnabled
-            showingAlert = true
-            alertType = .xcodePlistNotFound
+            showAlert(of: .xcodePlistNotFound)
             return
         }
-
-        // Show an alert to quit Xcode.app if it is running.
-        let isRunningXcode = NSWorkspace.shared.runningApplications
-            .contains(where: { app in
-                return app.bundleIdentifier == XCODE_BUNDLE_IDENTIFIER
-                && app.localizedName == "Xcode"
-            })
-        if isRunningXcode {
-            xchookEnabled = innerXchookEnabled
-            showingAlert = true
-            alertType = .xcodeIsRunning
-            return
-        }
-
         if newValue {
-            showingAlert = true
-            alertType = .xchookWarning
+            showAlert(of: .xchookWarning)
         } else {
-            xchook.uninstall()
-            innerXchookEnabled = false
+            do {
+                try xchook.uninstall()
+                innerXchookEnabled = false
+                offerXcodeRestartIfNeeded()
+            } catch {
+                xchookEnabled = innerXchookEnabled
+                showAlert(of: .operationFailed)
+            }
         }
     }
 
     func react(for userResponse: Bool) {
-        if let xchook = xchook, userResponse {
-            innerXchookEnabled = true
-            xchook.install()
-        } else {
+        guard let xchook = xchook, userResponse else {
             innerXchookEnabled = false
             xchookEnabled = innerXchookEnabled
+            return
+        }
+        do {
+            try xchook.install()
+            innerXchookEnabled = true
+            offerXcodeRestartIfNeeded()
+        } catch {
+            innerXchookEnabled = false
+            xchookEnabled = innerXchookEnabled
+            showAlert(of: .operationFailed)
+        }
+    }
+
+    func restartXcode() {
+        Task {
+            await XcodeApplication.restart()
+        }
+    }
+
+    private func offerXcodeRestartIfNeeded() {
+        if XcodeApplication.isRunning {
+            showAlert(of: .xcodeRestart)
+        }
+    }
+
+    private func showAlert(of type: AlertType) {
+        alertType = type
+        DispatchQueue.main.async {
+            self.showingAlert = true
         }
     }
 

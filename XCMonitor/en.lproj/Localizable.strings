@@ -19,8 +19,13 @@
 "plistNotFoundTitle" = "Xcode.plist Not Found";
 "plistNotFoundMessage" = "XCMonitor cannot be used unless Xcode.app is installed and accessible.";
 
-"xcodeIsRunningTitle" = "Xcode.app Is Running";
-"xcodeIsRunningMessage" = "This operation cannot be performed while Xcode.app is running. Please quit Xcode.app.";
+"xcodeRestartTitle" = "Restart Xcode.app";
+"xcodeRestartMessage" = "Xcode.app must be restarted for the change to take effect.";
+"xcodeRestartNow" = "Restart Now";
+"xcodeRestartLater" = "Later";
+
+"operationFailedTitle" = "Operation Failed";
+"operationFailedMessage" = "Failed to update the Xcode Behaviors settings.";
 
 "xchookConfirmTitle" = "Confirmation";
 "xchookConfirmMessage" = "Enabling XCHook will overwrite scripts already set in Xcode Behaviors.";
@@ -31,8 +36,6 @@
 "projectNotOpenInformative" = "The file path may have changed or the project file may have been deleted.";
 
 // Preferences
-"permission" = "XCMonitor requires the permission of Full Disk Access.";
-"openSystemPreferences" = "Open System Preferences";
 "general" = "General";
 "enableScripts" = "Enable scripts to hook Xcode events.";
 "startup:" = "Startup:";

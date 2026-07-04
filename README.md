@@ -25,7 +25,7 @@ Open Preferences of XCMonitor and enable XCHook.
 ## XCHook
 
 A library to hack the events (building and testing) of Xcode.app.<br>
-This library supports macOS (11+).<br>
+This library supports macOS (15+).<br>
 XCMonitor is a demonstration for XCHook.
 
 https://github.com/Kyome22/XCHook
