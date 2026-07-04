@@ -12,6 +12,12 @@ This app can collect Xcode event types and elapsed time.
 
 <img src="Resources/xcmonitor_history.png" height="275px" alt="demo">
 
+## Architecture
+
+XCMonitor adopts the [LUCA](https://github.com/Kyome22/LUCA) architecture.
+The app shell lives in `XCMonitor.xcodeproj` and all source code lives in the local Swift Package `LocalPackage/`, split into three layers: `DataSource`, `Model`, and `UserInterface`.
+Target: macOS 15+.
+
 ## Installation
 
 Go to [Releases](https://github.com/Kyome22/XCMonitor/releases) and download the latest `dmg` file.
