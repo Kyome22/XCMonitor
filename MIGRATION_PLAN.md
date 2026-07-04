@@ -2,7 +2,7 @@
 
 ## Phase Status
 - [x] Phase 0 — Inventory (user approved)
-- [ ] Phase 1 — Scaffold
+- [x] Phase 1 — Scaffold
 - [ ] Phase 2 — DataSource
 - [ ] Phase 3 — Model
 - [ ] Phase 4 — UserInterface
@@ -81,8 +81,11 @@ Other persisted state:
 
 Only the `MainMenu` store consumes XCHook events and Xcode-termination notifications; both are
 screen-local and subscribed directly from the clients in `reduce(.task)` (HandyPalette judgment:
-streams only for state crossing scene/store boundaries). AppState keeps the standard plain fields
-(`environmentInfo`, `hasAlreadyBootstrap`).
+streams only for state crossing scene/store boundaries). AppState keeps only `hasAlreadyBootstrap`:
+the `EnvironmentInfo` cluster (`EnvironmentInfo`, `Bundle+Extension`, `ProcessInfo+Extension`) is
+dropped — the about box is the standard `orderFrontStandardAboutPanel` and there is no
+diagnostics UI, so it would have zero consumers (NewCanvas precedent). `UserDefaultsClient` is
+likewise skipped (no persisted keys).
 
 ## File mapping (every old file)
 | Old path | Action | New path / reason |
