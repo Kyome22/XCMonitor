@@ -1,5 +1,4 @@
 .DS_Store
-original/
 
 # Xcode
 xcuserdata/
@@ -10,3 +9,5 @@ Packages
 Packages.resolved
 .swiftpm/
 .build/
+
+DesignResources/
