@@ -11,5 +11,16 @@
 import Foundation
 
 public enum XCMError: Error, Equatable {
-    // MIGRATION: Phase 2 adds the user-actionable cases from the Phase 0 inventory.
+    case xchookOperation(XCHookOperation)
+    case xcodeProject(XcodeProject)
+
+    public enum XCHookOperation: Error, Equatable {
+        case xcodePlistNotFound
+        case installFailed
+        case uninstallFailed
+    }
+
+    public enum XcodeProject: Error, Equatable {
+        case projectFileNotFound(String)
+    }
 }

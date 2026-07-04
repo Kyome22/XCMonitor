@@ -1,0 +1,29 @@
+/*
+ SMAppServiceClient.swift
+ DataSource
+
+ Created by Takuto Nakamura on 2026/07/04.
+ Copyright 2026 Kyome22 (Takuto Nakamura)
+
+ This software is released under the MIT License, see LICENSE.
+ */
+
+import ServiceManagement
+
+public struct SMAppServiceClient: DependencyClient {
+    var isEnabled: @Sendable () -> Bool
+    var register: @Sendable () throws -> Void
+    var unregister: @Sendable () throws -> Void
+
+    public static let liveValue = Self(
+        isEnabled: { SMAppService.mainApp.status == .enabled },
+        register: { try SMAppService.mainApp.register() },
+        unregister: { try SMAppService.mainApp.unregister() }
+    )
+
+    public static let testValue = Self(
+        isEnabled: { false },
+        register: {},
+        unregister: {}
+    )
+}
