@@ -3,219 +3,117 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C27E6ED284E586600AB7911 /* EventHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C27E6EC284E586600AB7911 /* EventHistory.swift */; };
-		1C58AFF6281D8AE70022595E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C58AFF5281D8AE70022595E /* AppDelegate.swift */; };
-		1C58AFFA281D8AE80022595E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C58AFF9281D8AE80022595E /* Assets.xcassets */; };
-		1C58B00D281D8DAB0022595E /* MenuBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B00C281D8DAB0022595E /* MenuBarModel.swift */; };
-		1C58B00F281D8DF90022595E /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B00E281D8DF90022595E /* MenuBar.swift */; };
-		1C58B011281D8E380022595E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B010281D8E380022595E /* Extensions.swift */; };
-		1C58B020281EDDCF0022595E /* GeneralSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C58B01F281EDDCF0022595E /* GeneralSettingsViewModel.swift */; };
-		1C5BEE6D283E91B000AC339D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BEE6C283E91B000AC339D /* AppDelegate.swift */; };
-		1C5BEE7B283E924500AC339D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5BEE7A283E924500AC339D /* main.swift */; };
-		1C5BEE7D283E92FD00AC339D /* XCMonitorLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1C5BEE6A283E91B000AC339D /* XCMonitorLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		1CB48B5A2858E8DD0024FF45 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CB48B5C2858E8DD0024FF45 /* Localizable.strings */; };
-		1CE1994328548E590040CE90 /* HistoryMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE1994228548E590040CE90 /* HistoryMenuItem.swift */; };
-		1CE199642854D9D00040CE90 /* XCMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE199632854D9D00040CE90 /* XCMonitorApp.swift */; };
-		1CE199662854DB580040CE90 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE199652854DB580040CE90 /* SettingsView.swift */; };
-		1CE199682854DB910040CE90 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE199672854DB910040CE90 /* GeneralSettingsView.swift */; };
-		1CFF39892FF8F9D4006E2166 /* XCHook in Frameworks */ = {isa = PBXBuildFile; productRef = 1CFF39882FF8F9D4006E2166 /* XCHook */; };
+		1C93D964F962C5E9D4F5DE1D /* UnitTest.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 1C1A27C2E7D018099C8EE82C /* UnitTest.xctestplan */; };
+		1CF6BE1B4AC7A39BC041F5F4 /* UserInterface in Frameworks */ = {isa = PBXBuildFile; productRef = 1C232788E94C3B1ABF8F6204 /* UserInterface */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		1C5BEE7C283E92D400AC339D /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Contents/Library/LoginItems;
-			dstSubfolderSpec = 1;
-			files = (
-				1C5BEE7D283E92FD00AC339D /* XCMonitorLauncher.app in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		1C27E6EC284E586600AB7911 /* EventHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHistory.swift; sourceTree = "<group>"; };
-		1C58AFF2281D8AE70022595E /* XCMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C58AFF5281D8AE70022595E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1C58AFF9281D8AE80022595E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1C58AFFE281D8AE80022595E /* XCMonitor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XCMonitor.entitlements; sourceTree = "<group>"; };
-		1C58B007281D8C290022595E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		1C58B00C281D8DAB0022595E /* MenuBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarModel.swift; sourceTree = "<group>"; };
-		1C58B00E281D8DF90022595E /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
-		1C58B010281D8E380022595E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		1C58B01F281EDDCF0022595E /* GeneralSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsViewModel.swift; sourceTree = "<group>"; };
-		1C5BEE6A283E91B000AC339D /* XCMonitorLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCMonitorLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C5BEE6C283E91B000AC339D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1C5BEE75283E91B100AC339D /* XCMonitorLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XCMonitorLauncher.entitlements; sourceTree = "<group>"; };
-		1C5BEE79283E91F800AC339D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		1C5BEE7A283E924500AC339D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		1CB48B5B2858E8DD0024FF45 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1CB48B5D2858E8E10024FF45 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1CE1994228548E590040CE90 /* HistoryMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMenuItem.swift; sourceTree = "<group>"; };
-		1CE199632854D9D00040CE90 /* XCMonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCMonitorApp.swift; sourceTree = "<group>"; };
-		1CE199652854DB580040CE90 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		1CE199672854DB910040CE90 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
+		1C1A27C2E7D018099C8EE82C /* UnitTest.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UnitTest.xctestplan; sourceTree = "<group>"; };
+		1C6C158949CECE13013D2F97 /* XCMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CAF7B9B7AC1924ACE7EF8B6 /* LocalPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LocalPackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFrameworksBuildPhase section */
-		1C58AFEF281D8AE70022595E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1CFF39892FF8F9D4006E2166 /* XCHook in Frameworks */,
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1CC3521D178C3E02E6614E8C /* Exceptions for "XCMonitor" folder in "XCMonitor" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			target = 1C1A4C0FED7D986964842092 /* XCMonitor */;
 		};
-		1C5BEE67283E91B000AC339D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
-/* Begin PBXGroup section */
-		1C58AFE9281D8AE70022595E = {
-			isa = PBXGroup;
-			children = (
-				1C58AFF4281D8AE70022595E /* XCMonitor */,
-				1C5BEE6B283E91B000AC339D /* XCMonitorLauncher */,
-				1C58AFF3281D8AE70022595E /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		1C58AFF3281D8AE70022595E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1C58AFF2281D8AE70022595E /* XCMonitor.app */,
-				1C5BEE6A283E91B000AC339D /* XCMonitorLauncher.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		1C58AFF4281D8AE70022595E /* XCMonitor */ = {
-			isa = PBXGroup;
-			children = (
-				1CE199632854D9D00040CE90 /* XCMonitorApp.swift */,
-				1C58B00A281D8CAC0022595E /* Model */,
-				1C5BEE80283E981700AC339D /* ViewModel */,
-				1C58B00B281D8CB70022595E /* View */,
-				1C58B007281D8C290022595E /* Info.plist */,
-				1C58AFF9281D8AE80022595E /* Assets.xcassets */,
-				1C58AFFE281D8AE80022595E /* XCMonitor.entitlements */,
-				1CB48B5C2858E8DD0024FF45 /* Localizable.strings */,
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1CAC39CAC4FB996F3417DE32 /* XCMonitor */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				1CC3521D178C3E02E6614E8C /* Exceptions for "XCMonitor" folder in "XCMonitor" target */,
 			);
 			path = XCMonitor;
 			sourceTree = "<group>";
 		};
-		1C58B00A281D8CAC0022595E /* Model */ = {
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1C41C46DF5F3AFEA539C5683 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+				1CF6BE1B4AC7A39BC041F5F4 /* UserInterface in Frameworks */,
+			);
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C39CB2DF068B006254B0D8C = {
 			isa = PBXGroup;
 			children = (
-				1C58AFF5281D8AE70022595E /* AppDelegate.swift */,
-				1C27E6EC284E586600AB7911 /* EventHistory.swift */,
+				1C1A27C2E7D018099C8EE82C /* UnitTest.xctestplan */,
+				1CAF7B9B7AC1924ACE7EF8B6 /* LocalPackage */,
+				1CAC39CAC4FB996F3417DE32 /* XCMonitor */,
+				1CF5A9F6071C33689B39C35B /* Frameworks */,
+				1CE450A59ACB231D6F70476C /* Products */,
 			);
-			path = Model;
 			sourceTree = "<group>";
 		};
-		1C58B00B281D8CB70022595E /* View */ = {
+		1CE450A59ACB231D6F70476C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1C58B010281D8E380022595E /* Extensions.swift */,
-				1C58B00E281D8DF90022595E /* MenuBar.swift */,
-				1CE1994228548E590040CE90 /* HistoryMenuItem.swift */,
-				1CE199652854DB580040CE90 /* SettingsView.swift */,
-				1CE199672854DB910040CE90 /* GeneralSettingsView.swift */,
+				1C6C158949CECE13013D2F97 /* XCMonitor.app */,
 			);
-			path = View;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		1C5BEE6B283E91B000AC339D /* XCMonitorLauncher */ = {
+		1CF5A9F6071C33689B39C35B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1C5BEE79283E91F800AC339D /* Info.plist */,
-				1C5BEE7A283E924500AC339D /* main.swift */,
-				1C5BEE6C283E91B000AC339D /* AppDelegate.swift */,
-				1C5BEE75283E91B100AC339D /* XCMonitorLauncher.entitlements */,
 			);
-			path = XCMonitorLauncher;
-			sourceTree = "<group>";
-		};
-		1C5BEE80283E981700AC339D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				1C58B00C281D8DAB0022595E /* MenuBarModel.swift */,
-				1C58B01F281EDDCF0022595E /* GeneralSettingsViewModel.swift */,
-			);
-			path = ViewModel;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1C58AFF1281D8AE70022595E /* XCMonitor */ = {
+		1C1A4C0FED7D986964842092 /* XCMonitor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1C58B001281D8AE80022595E /* Build configuration list for PBXNativeTarget "XCMonitor" */;
+			buildConfigurationList = 1CE27BE8460EEAC78953EF43 /* Build configuration list for PBXNativeTarget "XCMonitor" */;
 			buildPhases = (
-				1C58AFEE281D8AE70022595E /* Sources */,
-				1C58AFEF281D8AE70022595E /* Frameworks */,
-				1C58AFF0281D8AE70022595E /* Resources */,
-				1C5BEE7C283E92D400AC339D /* CopyFiles */,
+				1C3128612868DA11F64803BC /* Sources */,
+				1C41C46DF5F3AFEA539C5683 /* Frameworks */,
+				1CAFEB016B55B7BB62974340 /* Resources */,
 			);
 			buildRules = (
 			);
-			dependencies = (
+			fileSystemSynchronizedGroups = (
+				1CAC39CAC4FB996F3417DE32 /* XCMonitor */,
 			);
 			name = XCMonitor;
 			packageProductDependencies = (
-				1CFF39882FF8F9D4006E2166 /* XCHook */,
+				1C232788E94C3B1ABF8F6204 /* UserInterface */,
 			);
 			productName = XCMonitor;
-			productReference = 1C58AFF2281D8AE70022595E /* XCMonitor.app */;
-			productType = "com.apple.product-type.application";
-		};
-		1C5BEE69283E91B000AC339D /* XCMonitorLauncher */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1C5BEE78283E91B100AC339D /* Build configuration list for PBXNativeTarget "XCMonitorLauncher" */;
-			buildPhases = (
-				1C5BEE66283E91B000AC339D /* Sources */,
-				1C5BEE67283E91B000AC339D /* Frameworks */,
-				1C5BEE68283E91B000AC339D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = XCMonitorLauncher;
-			productName = XCMonitorLauncher;
-			productReference = 1C5BEE6A283E91B000AC339D /* XCMonitorLauncher.app */;
+			productReference = 1C6C158949CECE13013D2F97 /* XCMonitor.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1C58AFEA281D8AE70022595E /* Project object */ = {
+		1C7BE5117296B8BF1DB942FC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1340;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2640;
 				TargetAttributes = {
-					1C58AFF1281D8AE70022595E = {
-						CreatedOnToolsVersion = 13.3.1;
-					};
-					1C5BEE69283E91B000AC339D = {
-						CreatedOnToolsVersion = 13.3.1;
+					1C1A4C0FED7D986964842092 = {
+						CreatedOnToolsVersion = 26.2;
 					};
 				};
 			};
-			buildConfigurationList = 1C58AFED281D8AE70022595E /* Build configuration list for PBXProject "XCMonitor" */;
-			compatibilityVersion = "Xcode 13.0";
+			buildConfigurationList = 1C3F72A20D48CBDFC7072141 /* Build configuration list for PBXProject "XCMonitor" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -223,88 +121,45 @@
 				Base,
 				ja,
 			);
-			mainGroup = 1C58AFE9281D8AE70022595E;
-			packageReferences = (
-				1CFF39872FF8F9D4006E2166 /* XCRemoteSwiftPackageReference "XCHook" */,
-			);
-			productRefGroup = 1C58AFF3281D8AE70022595E /* Products */;
+			mainGroup = 1C39CB2DF068B006254B0D8C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 90;
+			productRefGroup = 1CE450A59ACB231D6F70476C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1C58AFF1281D8AE70022595E /* XCMonitor */,
-				1C5BEE69283E91B000AC339D /* XCMonitorLauncher */,
+				1C1A4C0FED7D986964842092 /* XCMonitor */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1C58AFF0281D8AE70022595E /* Resources */ = {
+		1CAFEB016B55B7BB62974340 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
-				1C58AFFA281D8AE80022595E /* Assets.xcassets in Resources */,
-				1CB48B5A2858E8DD0024FF45 /* Localizable.strings in Resources */,
+				1C93D964F962C5E9D4F5DE1D /* UnitTest.xctestplan in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1C5BEE68283E91B000AC339D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1C58AFEE281D8AE70022595E /* Sources */ = {
+		1C3128612868DA11F64803BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
-				1C58B00D281D8DAB0022595E /* MenuBarModel.swift in Sources */,
-				1C58B011281D8E380022595E /* Extensions.swift in Sources */,
-				1CE199642854D9D00040CE90 /* XCMonitorApp.swift in Sources */,
-				1CE1994328548E590040CE90 /* HistoryMenuItem.swift in Sources */,
-				1C58B020281EDDCF0022595E /* GeneralSettingsViewModel.swift in Sources */,
-				1C58AFF6281D8AE70022595E /* AppDelegate.swift in Sources */,
-				1CE199682854DB910040CE90 /* GeneralSettingsView.swift in Sources */,
-				1C27E6ED284E586600AB7911 /* EventHistory.swift in Sources */,
-				1C58B00F281D8DF90022595E /* MenuBar.swift in Sources */,
-				1CE199662854DB580040CE90 /* SettingsView.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1C5BEE66283E91B000AC339D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C5BEE7B283E924500AC339D /* main.swift in Sources */,
-				1C5BEE6D283E91B000AC339D /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		1CB48B5C2858E8DD0024FF45 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1CB48B5B2858E8DD0024FF45 /* en */,
-				1CB48B5D2858E8E10024FF45 /* ja */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		1C58AFFF281D8AE80022595E /* Debug */ = {
+		1C8C93D2497AB21F54130687 /* Debug configuration for PBXProject "XCMonitor" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -331,10 +186,13 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = VJ5N2X84K8;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -348,23 +206,77 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		1C58B000281D8AE80022595E /* Release */ = {
+		1CDE1A5F05ABAC4DC2EC0E81 /* Release configuration for PBXNativeTarget "XCMonitor" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = XCMonitor/XCMonitor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.4.0;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = VJ5N2X84K8;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = XCMonitor/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = XCMonitor;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_MetalCaptureEnabled = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "©︎2022 Takuto Nakamura";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.XCMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		1CE9FBCF236A3F54D3250695 /* Release configuration for PBXProject "XCMonitor" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -391,10 +303,13 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = VJ5N2X84K8;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -402,32 +317,49 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
-		1C58B002281D8AE80022595E /* Debug */ = {
+		1CF905D80626283EB3802408 /* Debug configuration for PBXNativeTarget "XCMonitor" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = XCMonitor/XCMonitor.entitlements;
-				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.4.0;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = VJ5N2X84K8;
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XCMonitor/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = XCMonitor;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2022 Takuto Nakamura";
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_MetalCaptureEnabled = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "©︎2022 Takuto Nakamura";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -435,150 +367,43 @@
 				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.XCMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
-		};
-		1C58B003281D8AE80022595E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = XCMonitor/XCMonitor.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.4.0;
-				DEVELOPMENT_TEAM = VJ5N2X84K8;
-				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = XCMonitor/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2022 Takuto Nakamura";
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MARKETING_VERSION = 1.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.XCMonitor;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		1C5BEE76283E91B100AC339D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = XCMonitorLauncher/XCMonitorLauncher.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.4.0;
-				DEVELOPMENT_TEAM = VJ5N2X84K8;
-				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = XCMonitorLauncher/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.XCMonitorLauncher;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		1C5BEE77283E91B100AC339D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = XCMonitorLauncher/XCMonitorLauncher.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.4.0;
-				DEVELOPMENT_TEAM = VJ5N2X84K8;
-				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = XCMonitorLauncher/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.XCMonitorLauncher;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1C58AFED281D8AE70022595E /* Build configuration list for PBXProject "XCMonitor" */ = {
+		1C3F72A20D48CBDFC7072141 /* Build configuration list for PBXProject "XCMonitor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1C58AFFF281D8AE80022595E /* Debug */,
-				1C58B000281D8AE80022595E /* Release */,
+				1C8C93D2497AB21F54130687 /* Debug configuration for PBXProject "XCMonitor" */,
+				1CE9FBCF236A3F54D3250695 /* Release configuration for PBXProject "XCMonitor" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1C58B001281D8AE80022595E /* Build configuration list for PBXNativeTarget "XCMonitor" */ = {
+		1CE27BE8460EEAC78953EF43 /* Build configuration list for PBXNativeTarget "XCMonitor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1C58B002281D8AE80022595E /* Debug */,
-				1C58B003281D8AE80022595E /* Release */,
+				1CF905D80626283EB3802408 /* Debug configuration for PBXNativeTarget "XCMonitor" */,
+				1CDE1A5F05ABAC4DC2EC0E81 /* Release configuration for PBXNativeTarget "XCMonitor" */,
 			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1C5BEE78283E91B100AC339D /* Build configuration list for PBXNativeTarget "XCMonitorLauncher" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1C5BEE76283E91B100AC339D /* Debug */,
-				1C5BEE77283E91B100AC339D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		1CFF39872FF8F9D4006E2166 /* XCRemoteSwiftPackageReference "XCHook" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Kyome22/XCHook.git";
-			requirement = {
-				kind = exactVersion;
-				version = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		1CFF39882FF8F9D4006E2166 /* XCHook */ = {
+		1C232788E94C3B1ABF8F6204 /* UserInterface */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1CFF39872FF8F9D4006E2166 /* XCRemoteSwiftPackageReference "XCHook" */;
-			productName = XCHook;
+			productName = UserInterface;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 1C58AFEA281D8AE70022595E /* Project object */;
+	rootObject = 1C7BE5117296B8BF1DB942FC /* Project object */;
 }
